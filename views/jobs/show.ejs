@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+
+<h1><%= foundJob.postName %> - <%= foundJob.companyName %></h1>
+<div>Post - <%= foundJob.postName %></div>
+<div>Company - <%= foundJob.companyName %></div>
+<div>CTC - <%= foundJob.ctc %></div>
+<div>CGPA - <%= foundJob.cgpa %></div>
+<div>Location - <%= foundJob.location %></div>
+<div>No.Of.Positions - <%= foundJob.numberOfPositions %></div>
+<div>Status - <%= foundJob.status %></div>
+<div>Description - <%= foundJob.description %></div>
+<a href="/jobs/<%= foundJob._id %>/edit" class="btn btn-warning">Edit</a>
+<form action="<%= foundJob._id %>?_method=delete" method="post">
+    <input class="btn btn-danger" type="submit" value="delete">
+</form> 
+<!-- after -->
+<% if(currentUser) { %>
+    <a href="/jobs/<%= foundJob._id %>/apply/<%= currentUser._id %>" class="btn btn-info">Apply</a>
+<% } %>
+<a href="/jobs/<%= foundJob._id %>/questions" class="btn-btn-primary">Questions</a>
+<a href="/jobs/<%= foundJob._id %>/test" class="btn-btn-primary">Give Test</a>
+
+<%- include('../partials/footer') %>
