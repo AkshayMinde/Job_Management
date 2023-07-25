@@ -74,7 +74,7 @@ app.use((req, res, next) => {
 
 
 app.get('/', (req,res)=>{
-    res.send('working');
+    res.render('home');
 })
 
 
@@ -94,6 +94,6 @@ app.use(quesRoutes);
 
 
 const port = process.env.PORT || 3000;
-app.listen(port, (req, res)=>{
+app.listen(3000, (req, res)=>{
     console.log(`Server is working on 3000`);
 })
