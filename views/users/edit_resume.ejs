@@ -1,18 +1,18 @@
 <%- include('../partials/header') %>
 
-<form action="/users/<%= user._id %>/resume" method="post">
+<!-- <form action="/users/<%= user._id %>/resume" method="post">
     <input type="text" name="name" id="">
     <input type="text" name="phone" id="">
     <input type="text" name="linkedIn" id="">
     <textarea name="achievements" id="" cols="30" rows="10"></textarea>
     <br>
-    <!-- experience.companyName / experience['companyName'] -->
-    <input type="text" name="experience[companyName]" id="">
+     experience.companyName / experience['companyName'] -->
+    <!-- <input type="text" name="experience[companyName]" id="">
     <input type="text" name="experience[designation]" id="">
     <textarea name="experience[description]" id="" cols="30" rows="10"></textarea>
     <input type="date" name="experience[startDate]" id="">
-    <input type="date" name="experience[endDate]" id="">
-    <br>
+    <input type="date" experience[endDate]" id="">
+    <br> -->
     <!-- experience.companyName / experience['companyName'] -->
     <!-- <input type="text" name="experience[companyName]" id="">
     <input type="text" name="experience[designation]" id="">
@@ -20,5 +20,50 @@
     <input type="date" name="experience[startDate]" id="">
     <input type="date" name="experience[endDate]" id="">
     <input type="submit" value="submit" class="btn btn-primary"> -->
-</form>
+<!-- </form> --> 
+
+<h1 style="text-align: center;">Resume</h1>
+<div style="display: flex; flex-direction: column;  align-items: center;">
+    <form action="/users/<%= user._id %>/resume" method="post">
+        <div class="mb-3">
+        <label for="name1" class="form-label">Name</label>
+        <input type="text" name="name" class="form-control" id="name1">
+        </div>
+        <div class="mb-3">
+        <label for="phone1" class="form-label">Phone</label>
+        <input type="text" name="phone" class="form-control" id="phone1">
+        </div>
+        <div class="mb-3">
+        <label for="linkedIn1" class="form-label">LinkedIn</label>
+        <input type="text" name="linkedIn" class="form-control" id="linkedIn1">
+        </div>
+        <div class="mb-3">
+        <label for="achievements" class="form-label">Achievements</label>
+        <textarea name="achievements" class="form-control" id="achievements1" cols="30" rows="10"></textarea>
+        </div>
+        <div class="mb-3">
+        <label for="experience[companyName]" class="form-label">Company Name</label>
+        <input type="text" name="experience[companyName]" class="form-control" id="experience[companyName]">
+        </div>
+        <div class="mb-3">
+        <label for="experience[designation]" class="form-label">Designation</label>
+        <input type="text" name="experience[designation]" class="form-control" id="experience[designation]">
+        </div>
+        <div class="mb-3">
+        <label for="experience[description]" class="form-label">Job Role Description</label>
+        <textarea name="experience[description]" id="experience[description]" class="form-control" cols="30" rows="10"></textarea>
+        </div>
+        <div class="mb-3">
+        <label for="experience[startDate]" class="form-label">Start Date</label>
+        <input type="date" name="experience[startDate]" class="form-control" id="experience[startDate]">
+        </div>
+        <div class="mb-3">
+        <label for="experience[endDate]" class="form-label">End Date</label>
+        <input type="date" name="experience[endDate]" class="form-control" id="experience[endDate]">
+        </div>
+        <div style="display: flex; justify-content: center;" class="mb-3">
+            <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+        </div>
+  </form>
+</div>
 <%- include('../partials/footer') %>

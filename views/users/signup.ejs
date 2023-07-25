@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<form action="/signup" method="post">
+<!-- <form action="/signup" method="post">
     <input type="email" name="username" id="" placeholder="email">
     <input type="password" name="password" id="" placeholder="password">
     <input type="date" name="dob" id="">
@@ -8,6 +8,36 @@
     <input type="number" name="cgpa" min="0" max="10" step="0.01" placeholder="cgpa" id="">
     <input type="text" name="gender" placeholder="gender" id="">
     <input type="submit" value="Register">
-</form>
+</form> -->
+<h1 style="text-align: center;">Sign Up</h1>
+<div style="display: flex; flex-direction: column;  align-items: center;">
+    <form action="/signup" method="post">
+        <div class="mb-3">
+        <label for="username1" class="form-label">Email</label>
+        <input type="email" name="username" class="form-control" id="username1">
+        </div>
+        <div class="mb-3">
+        <label for="password1" class="form-label">Password</label>
+        <input type="password" name="password" class="form-control" id="password1">
+        </div>
+        <div class="mb-3">
+        <label for="dob1" class="form-label">Date of Birth</label>
+        <input type="date" name="dob" class="form-control" id="dob1">
+        </div>
+        <div class="mb-3">
+        <label for="cgpa1" class="form-label">CGPA</label>
+        <input type="number" name="cgpa" class="form-control" id="cgpa1" min="0" max="10" step="0.01">
+        </div>
+        <div class="mb-3">
+        <label for="phone1" class="form-label">Phone</label>
+        <input type="text" name="phone" class="form-control" id="phone1">
+        </div>
+        <div class="mb-3">
+        <label for="gender1" class="form-label">Gender</label>
+        <input type="text" name="gender" class="form-control" id="gender1">
+        </div>
+        <button type="submit" value="Register" class="btn btn-primary">Submit</button>
+  </form>
+</div>
 
 <%- include('../partials/footer') %>

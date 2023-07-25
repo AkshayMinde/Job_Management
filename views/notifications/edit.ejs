@@ -1,8 +1,26 @@
 <%- include('../partials/header') %>
-<form action="/notifications/<%= foundNotif._id %>?_method=patch" method="post">
+<!-- <form action="/notifications/<%= //foundNotif._id %>?_method=patch" method="post">
     <input type="text" name="title" id="" value="<%= foundNotif.title %>">
     <input type="text" name="body" id="" value="<%= foundNotif.body  %>">
     <input type="text" name="author" id="" value="<%= foundNotif.author  %>">
     <input type="submit" value="Edit">
-</form>
+</form> -->
+
+<div style="display: flex; flex-direction: column;  align-items: center;">
+    <form action="/<%= foundNotif._id %>?_method=patch" method="post">
+        <div class="mb-3">
+        <label for="title1" class="form-label">Title</label>
+        <input type="text" name="title" class="form-control" id="title1" value="<%= foundNotif.title %>">
+        </div>
+        <div class="mb-3">
+        <label for="body1" class="form-label">Body</label>
+        <input type="text" name="body" class="form-control" id="body1" value="<%= foundNotif.body %>">
+        </div>
+        <div class="mb-3">
+        <label for="author1" class="form-label">Author</label>
+        <input type="text" name="author" class="form-control" id="author1" value="<%= foundNotif.author %>">
+        </div>
+        <button type="submit" value="Edit a job" class="btn btn-primary">Submit</button>
+  </form>
+</div>
 <%- include('../partials/footer') %>

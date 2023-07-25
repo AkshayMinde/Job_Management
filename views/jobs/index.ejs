@@ -1,13 +1,13 @@
 <%- include('../partials/header') %>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-<form action="/jobs/search" method="get">
+<form style="display: flex; justify-content: center;" action="/jobs/search" method="get">
   <input type="text" name="name" id="">
   <input type="submit" value="search">
 </form>
-<h1>Index of Jobs</h1>
+<h1 style="display: flex; justify-content: center;">Index of Jobs</h1>
 
-<nav aria-label="Page navigation example">
+<nav style="display: flex; justify-content: center;" aria-label="Page navigation example">
     <ul class="pagination">
         <!-- link to current page with the help of pagination module /jobs?page=<%# = allJobs.page %> -->
       <li class="page-item"><a class="page-link" href="/jobs?page=<%= allJobs.prevPage %>">Previous</a></li>
@@ -17,11 +17,26 @@
       <li class="page-item"><a class="page-link" href="/jobs?page=<%= allJobs.nextPage %>">Next</a></li>
     </ul>
   </nav>
-
-<% for(let job of allJobs.docs /* alljobs.doc because we are using pagination*/ ){ %>
-    <div><%= job.companyName %> - <a href="/jobs/<%= job._id %>">View More</a></div>
-<% } %>
-
+  <div class="row-md-2">
+    <% for(let job of allJobs.docs /* alljobs.doc because we are using pagination*/ ){ %>
+        <!-- <div><%= job.companyName %> - <a href="/jobs/<%= job._id %>">View More</a></div> -->
+        
+          <div class="col-md-4 my-4">
+              <div class="card" style="width: 40rem; height: 30rem;">
+                <img style="width: 100%; height: 50%;" src="https://cdn3d.iconscout.com/3d/premium/thumb/job-search-5706047-4755489.png?f=webp" alt="">
+              <div class="card-body" >
+                <h5 class="card-title" style="text-align: center;"><%= job.companyName %></h5>
+                <p class="card-text" style="text-align: center;"><%= job.postName %></p>
+                <div style="display: flex; justify-content: center;">
+                  <a  href="/jobs/<%= job._id %>" class="btn btn-primary">View More</a>
+                </div>
+              </div>
+        </div>
+          </div>
+        
+        
+    <% } %>
+  </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 

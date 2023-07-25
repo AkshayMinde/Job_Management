@@ -1,8 +1,27 @@
 <%- include('../partials/header') %>
-<form action="/notifications" method="post">
+<!-- <form action="/notifications" method="post">
     <input type="text" name="title" id="" placeholder="title">
     <input type="text" name="body" id="" placeholder="body">
     <input type="text" name="author" id="" placeholder="author">
     <input type="submit" value="Submit">
-</form>
+</form> -->
+<h1 style="text-align: center;">New Notification</h1>
+<hr>
+<div style="display: flex; flex-direction: column;  align-items: center;">
+    <form action="/notifications" method="post">
+        <div class="mb-3">
+        <label for="title1" class="form-label">Title</label>
+        <input type="text" name="title" class="form-control" id="title1">
+        </div>
+        <div class="mb-3">
+        <label for="body1" class="form-label">Body</label>
+        <input type="text" name="body" class="form-control" id="body1">
+        </div>
+        <div class="mb-3">
+        <label for="author1" class="form-label">Location</label>
+        <input type="text" name="author" class="form-control" id="author1">
+        </div>
+        <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
 <%- include('../partials/footer') %>

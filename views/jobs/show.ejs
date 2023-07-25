@@ -1,23 +1,37 @@
 <%- include('../partials/header') %>
 
-<h1><%= foundJob.postName %> - <%= foundJob.companyName %></h1>
-<div>Post - <%= foundJob.postName %></div>
+<h1 style="text-align: center;"><%= foundJob.postName %> - <%= foundJob.companyName %></h1>
+<!-- <div>Post - <%= foundJob.postName %></div>
 <div>Company - <%= foundJob.companyName %></div>
 <div>CTC - <%= foundJob.ctc %></div>
 <div>CGPA - <%= foundJob.cgpa %></div>
 <div>Location - <%= foundJob.location %></div>
 <div>No.Of.Positions - <%= foundJob.numberOfPositions %></div>
 <div>Status - <%= foundJob.status %></div>
-<div>Description - <%= foundJob.description %></div>
-<a href="/jobs/<%= foundJob._id %>/edit" class="btn btn-warning">Edit</a>
-<form action="<%= foundJob._id %>?_method=delete" method="post">
-    <input class="btn btn-danger" type="submit" value="delete">
-</form> 
-<!-- after -->
-<% if(currentUser) { %>
-    <a href="/jobs/<%= foundJob._id %>/apply/<%= currentUser._id %>" class="btn btn-info">Apply</a>
-<% } %>
-<a href="/jobs/<%= foundJob._id %>/questions" class="btn-btn-primary">Questions</a>
-<a href="/jobs/<%= foundJob._id %>/test" class="btn-btn-primary">Give Test</a>
+<div>Description - <%= foundJob.description %></div> -->
 
+<ul class="list-group" style="display: flex; flex-direction: column; justify-content: space-between;  text-align: center;">
+    <li class="list-group-item">Post - <%= foundJob.postName %></li>
+    <li class="list-group-item">Company - <%= foundJob.companyName %></li>
+    <li class="list-group-item">CTC - <%= foundJob.ctc %></li>
+    <li class="list-group-item">CGPA - <%= foundJob.cgpa %></li>
+    <li class="list-group-item">Location - <%= foundJob.location %></li>
+    <li class="list-group-item">No.Of.Positions - <%= foundJob.numberOfPositions %></li>
+    <li class="list-group-item">Status - <%= foundJob.status %></li>
+    <li class="list-group-item">Description - <%= foundJob.description %></li>
+</ul>
+
+
+<div class="my-4"  style="display: flex; justify-content:center;  text-align: center;" >
+    <a href="/jobs/<%= foundJob._id %>/edit" class="btn btn-warning mx-3">Edit</a>
+    <form action="<%= foundJob._id %>?_method=delete" method="post">
+        <input class="btn btn-danger mx-3" type="submit" value="Delete">
+    </form> 
+    <!-- after -->
+    <% if(currentUser) { %>
+        <a href="/jobs/<%= foundJob._id %>/apply/<%= currentUser._id %>" class="btn btn-info mx-3">Apply</a>
+    <% } %>
+    <a href="/jobs/<%= foundJob._id %>/questions" class="btn btn-primary mx-3">Questions</a>
+    <a href="/jobs/<%= foundJob._id %>/test" class="btn btn-secondary mx-3">Give Test</a>
+</div>
 <%- include('../partials/footer') %>

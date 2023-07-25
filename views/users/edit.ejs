@@ -1,12 +1,39 @@
 <%- include('../partials/header') %>
 
-<form action="/users/<%= foundUser._id %>?_method=patch" method="post">
+<!-- <form action="/users/<%= foundUser._id %>?_method=patch" method="post">
     <input type="email" name="username" id="" value="<%= foundUser.username %>" disabled>
     <input type="date" name="dob" id="" value="<%= foundUser.dob %>">
     <input type="text" name="phone" value="<%= foundUser.phone %>" id="">
     <input type="number" name="cgpa" min="0" max="10" step="0.01" value="<%= foundUser.cgpa %>" id="">
     <input type="text" name="gender" value="<%= foundUser.gender %>" id="">
     <input type="submit" value="Update">
-</form>
+</form> -->
+
+<h1 style="text-align: center;">Edit Details</h1>
+<div style="display: flex; flex-direction: column;  align-items: center;">
+    <form action="/users/<%= foundUser._id %>?_method=patch" method="post">
+        <div class="mb-3">
+        <label for="username1" class="form-label">Email</label>
+        <input type="email" name="username" class="form-control" id="username1" value="<%= foundUser.username %>" disabled>
+        </div>
+        <div class="mb-3">
+        <label for="dob1" class="form-label">Date of Birth</label>
+        <input type="date" name="dob" class="form-control" id="dob1" value="<%= foundUser.dob %>">
+        </div>
+        <div class="mb-3">
+        <label for="cgpa1" class="form-label">CGPA</label>
+        <input type="number" name="cgpa" class="form-control" id="cgpa1" min="0" max="10" step="0.01" value="<%= foundUser.cgpa %>">
+        </div>
+        <div class="mb-3">
+        <label for="phone1" class="form-label">Phone</label>
+        <input type="text" name="phone" class="form-control" id="phone1" value="<%= foundUser.phone %>">
+        </div>
+        <div class="mb-3">
+        <label for="gender1" class="form-label">Gender</label>
+        <input type="text" name="gender" class="form-control" id="gender1" value="<%= foundUser.gender %>">
+        </div>
+        <button type="submit" value="Update" class="btn btn-primary">Update</button>
+  </form>
+</div>
 
 <%- include('../partials/footer') %>

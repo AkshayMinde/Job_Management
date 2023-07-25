@@ -1,8 +1,8 @@
 <%- include('../partials/header') %>
 
-<h1>Edit page for job <%= foundJob.postName %></h1>
+<h1 style="text-align: center;">Edit page for <%= foundJob.postName %></h1>
 <!-- same as new form just replacing placeholder with value by the foundJob refrence passed and by using method-override changing the method from post to patch -->
-<form action="/jobs/<%= foundJob._id %>?_method=patch" method="post">
+<!-- <form action="/jobs/<%= foundJob._id %>?_method=patch" method="post">
 
     <input required type="text" name="postName" value="<%= foundJob.postName %>" id="">
     <input required type="text" name="companyName" value="<%= foundJob.companyName %>" id="">
@@ -13,7 +13,40 @@
     <textarea required name="description" id="" cols="30" rows="3"><%= foundJob.description %></textarea>
     <input type="submit" value="Edit a job">
 
-</form>
+</form> -->
+<div style="display: flex; flex-direction: column;  align-items: center;">
+    <form action="/jobs/<%= foundJob._id %>?_method=patch" method="post">
+        <div class="mb-3">
+        <label for="postName1" class="form-label">Post Name</label>
+        <input type="text" name="postName" class="form-control" id="postName1" value="<%= foundJob.postName %>">
+        </div>
+        <div class="mb-3">
+        <label for="companyName1" class="form-label">Company Name</label>
+        <input type="text" name="companyName" class="form-control" id="companyName1" value="<%= foundJob.companyName %>">
+        </div>
+        <div class="mb-3">
+        <label for="location1" class="form-label">Location</label>
+        <input type="text" name="location" class="form-control" id="location1" value="<%= foundJob.location %>">
+        </div>
+        <div class="mb-3">
+        <label for="cgpa1" class="form-label">CGPA</label>
+        <input type="number" name="cgpa" class="form-control" id="cgpa1" value="<%= foundJob.cgpa %>"  min="0" max="10" step="0.01">
+        </div>
+        <div class="mb-3">
+        <label for="ctc1" class="form-label">CTC</label>
+        <input type="number" name="ctc" class="form-control" id="ctc1" value="<%= foundJob.ctc %>">
+        </div>
+        <div class="mb-3">
+        <label for="numberOfPositions1" class="form-label">No. of. Positions</label>
+        <input type="number" name="numberOfPositions" class="form-control" id="numberOfPositions1" value="<%= foundJob.numberOfPositions %>">
+        </div>
+        <div class="mb-3">
+        <label for="desc1" class="form-label">Description</label>
+        <textarea required name="description" class="form-control" id="desc1" cols="30" rows="3" placeholder="description"><%= foundJob.description %></textarea>
+        </div>
+        <button type="submit" value="Edit a job" class="btn btn-primary">Submit</button>
+  </form>
+</div>
 
 
 

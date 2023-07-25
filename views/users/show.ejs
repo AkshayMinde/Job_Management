@@ -1,12 +1,17 @@
 <%- include('../partials/header') %>
-<h1>Profile Page</h1>
-<h2><%= foundUser.username %></h2>
-<ul>
-    <li>Name : <%= foundUser.username %></li>
-    <li>CGPA : <%= foundUser.cgpa %></li>
-    <li>Contact : <%= foundUser.phone %></li>
-    <li>DOB : <%= foundUser.dob %></li>
-    <li>Gender : <%= foundUser.gender %></li>
+<h1 style="text-align: center;">Profile Page</h1>
+<hr>
+<h2 style="text-align: center;"><%= foundUser.username %></h2>
+<ul class="list-group" style="display: flex; flex-direction: column; justify-content: space-between;  text-align: center;">
+    <li class="list-group-item">Name : <%= foundUser.username %></li>
+    <li class="list-group-item">CGPA : <%= foundUser.cgpa %></li>
+    <li class="list-group-item">Contact : <%= foundUser.phone %></li>
+    <li class="list-group-item">DOB : <%= foundUser.dob %></li>
+    <li class="list-group-item">Gender : <%= foundUser.gender %></li>
 </ul>
+<div style="display: flex; justify-content: center;">
+    <a  href="/users/<%= foundUser._id %>/edit" class="btn btn-primary my-3">Edit</a>
+    <a href="/users/<%= foundUser._id %>/resume" class="btn btn-info my-3 ms-3">Edit Resume</a>
+</div>
 
 <%- include('../partials/footer') %>

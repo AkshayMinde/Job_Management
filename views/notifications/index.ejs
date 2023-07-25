@@ -1,10 +1,18 @@
 <%- include('../partials/header') %>
 
-<h1>Notifications</h1>
-<% for (let notif of allNotifs) { %>
-    <div>
-        <%= notif.body %> - <a href="notifications/<%= notif._id %>/edit">Edit</a>
+    <h1 style="text-align: center;">Notifications</h1>
+    <div class="row">
+        <% for (let notif of allNotifs) { %>
+            
+                <div class="col-md-3 my-2">
+                    <div class="card" >
+                        <div class="card-body">
+                        <p class="card-text"><%= notif.body %></p>
+                        <a href="/notifications/<%= notif._id %>/edit" class="btn btn-primary">Edit</a>
+                        </div>
+                    </div>
+                </div>
+        <% } %>
     </div>
-<% } %>
 
 <%- include('../partials/footer') %>
