@@ -95,5 +95,5 @@ app.use(quesRoutes);
 
 const port = process.env.PORT || 3000;
 app.listen(port, (req, res)=>{
-    console.log(`Server is working `);
+    console.log(`Server is working`);
 })
